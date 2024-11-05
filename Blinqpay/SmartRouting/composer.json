@@ -1,0 +1,40 @@
+{
+    "name": "blinqpay/smart-routing",
+    "description": "A Laravel package for intelligent payment routing.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^11.30"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.5",
+        "phpunit/phpunit": "^11.4",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blinqpay\\SmartRouting\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Blinqpay\\SmartRouting\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Blinqpay\\SmartRouting\\SmartRoutingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Kingsley",
+            "email": "kingsconsult001@gmail.com"
+        }
+    ]
+}
