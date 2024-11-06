@@ -19,6 +19,8 @@ A Laravel package for intelligent payment routing that dynamically selects the b
 
    ```bash
    composer require blinqpay/smart-routing
+   ```
+
 
    or
 
