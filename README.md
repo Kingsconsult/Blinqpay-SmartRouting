@@ -1,5 +1,7 @@
 # Blinqpay Smart Routing Laravel Package
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 ## Introduction
 A Laravel package for intelligent payment routing that dynamically selects the best payment processor based on configurable criteria such as cost, reliability, currency, and country support.
 
@@ -15,16 +17,15 @@ A Laravel package for intelligent payment routing that dynamically selects the b
 
 ## Installation
 
-1. **Add the Package to Your Project**
+   **Add the Package to Your Project**
 
    ```bash
    composer require blinqpay/smart-routing
    ```
 
 
-   or
-
-   In your Laravel project, add the package via a path repository in your `composer.json`:
+## Manual Installation
+   In your Laravel project, add the package via a path repository in your `composer.json`
 
    ```json
    "repositories": [
@@ -36,32 +37,34 @@ A Laravel package for intelligent payment routing that dynamically selects the b
    "require": {
        "blinqpay/smart-routing": "*"
    }
+   ```
 
 
-2. publish configuration and Migrations
+  publish configuration and Migrations
 
-    - php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="config"
-    - php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="migrations"
-    - php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="seeders"
-    - php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="routes"
-    - php artisan migrate
-    - php artisan db:seed ProcessorTableSeeder
+   ```bash
+    php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="migrations"
+    php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="seeders"
+    php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="routes"
+    php artisan migrate
+    php artisan db:seed ProcessorTableSeeder
+   ```
 
-3. install the package
+   install the package
 
    ```bash
    composer update
+   ```
 
 
 ## Usage
 
-    Run 
-    - php artisan vendor:publish --provider="Blinqpay\SmartRouting\SmartRoutingServiceProvider" --tag="routes" 
+   To check available routes
 
-    will expose some routes for 
-
-    ```bash
+   ```bash
      php artisan route:list 
+   ```
 
 
 1. Dynamically select the routing
@@ -86,6 +89,7 @@ A Laravel package for intelligent payment routing that dynamically selects the b
 
     Each processor requires a name, cost, reliability, supported currencies, supported countries, status, and an adapter class that implements the ProcessorAdapterInterface'
 
+      ```json
     {
         "name" : "Lin",
         "cost" : 43.2,
@@ -94,29 +98,30 @@ A Laravel package for intelligent payment routing that dynamically selects the b
         "country_support" : ["NG"],
         "adapter_class" : "Blinqpay\\SmartRouting\\Adapters\\Processor1Adapter"
     }
+   ```
 
 
-4. Get all Active processors
+5. Get all Active processors
 
-    /processors/active  - GET Request
+    `/processors/active`  - GET Request
 
-5. Get all processors
+6. Get all processors
 
-    /processors  - GET Request
+    `/processors`  - GET Request
 
-6. Get one processors
+7. Get one processors
 
-    /processors/{id}  - GET Request
+    `/processors/{id}`  - GET Request
 
-7. Delete one processors
+8. Delete one processors
 
-    /processors/{id}  - DELETE Request
+    `/processors/{id}`  - DELETE Request
 
-8. Update one processors
+9. Update one processors
 
-    /processors/{id}  - PUT Request
+    `/processors/{id}`  - PUT Request
 
-    
+    ```json
     {
         "name" : "Lin",
         "cost" : 43.2,
@@ -125,6 +130,7 @@ A Laravel package for intelligent payment routing that dynamically selects the b
         "country_support" : ["NG"],
         "adapter_class" : "Blinqpay\\SmartRouting\\Adapters\\Processor1Adapter"
     }
+    ```
 
 
 
