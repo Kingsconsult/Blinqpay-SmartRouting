@@ -25,7 +25,11 @@ A Laravel package for intelligent payment routing that dynamically selects the b
 
 
 ## Manual Installation
-   In your Laravel project, add the package via a path repository in your `composer.json`
+   * Download the package as a zip file into your local machine
+   
+   * Extract the zip file into your application in a directory called packages (if you don't have this directory, create a new one)
+   
+   * In your Laravel project, add the package via a path repository in your `composer.json`
 
    ```json
    "repositories": [
@@ -35,10 +39,15 @@ A Laravel package for intelligent payment routing that dynamically selects the b
        }
    ],
    "require": {
-       "blinqpay/smart-routing": "*"
+       "blinqpay/smart-routing": "dev-main"
    }
    ```
 
+   install the package
+
+   ```bash
+   composer update
+   ```
 
   publish configuration and Migrations
 
@@ -50,13 +59,6 @@ A Laravel package for intelligent payment routing that dynamically selects the b
     php artisan migrate
     php artisan db:seed ProcessorTableSeeder
    ```
-
-   install the package
-
-   ```bash
-   composer update
-   ```
-
 
 ## Usage
 
